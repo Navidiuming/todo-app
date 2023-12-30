@@ -1,0 +1,125 @@
+/* general setup */
+:root{
+    font-family: 'myFont';
+    --fs : 0.7rem;
+    font-size: 1.2rem;
+    --img-backGround : url("./assets/images/bg-light-correction.jpg");
+    --list-backGround-color : hsl(248, 16%, 20%);
+}
+
+*{
+    margin:0;
+    padding:0;
+    direction: rtl;
+    box-sizing:border-box;
+}
+@font-face {
+    font-family: 'myFont';
+    src: url(./font/sahel-font-v1.0.0-alpha14/Sahel-Black.woff);
+}
+
+body{
+    background: var(--img-backGround) rgb(15, 1, 1) no-repeat 0 0 / 100vw 50vh ;
+    width: min(85%,800px);
+    min-height: 100%;
+    margin: auto;
+    padding-top: 7rem;
+}
+
+button{
+    background: transparent;
+    border: none;
+    font:inherit;
+    user-select: none;
+    display: flex;
+}
+
+input{
+    background: transparent;
+    border: none;
+    font: inherit;
+}
+
+ul{
+    list-style: none;
+}
+/* header */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* add task */
+.addTask{
+    background-color: rgb(41, 78, 114);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.3rem 0.5rem;
+    margin: 4rem 0 2.5rem 0;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.addTask .addBtnContainer{
+    position: relative;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: solid 0.1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addTask .addBtnContainer:hover{
+    background-color: rgb(0, 136, 255);
+}
+
+.addTask .addBtnContainer button{
+    justify-content: center;
+    align-items: center;
+}
+.addTask input{
+    flex-grow: 2;
+    padding: .5rem .5rem;
+    font-size: var(--fs);
+}
+
+/* added task */
+
+li.item{
+    font-size: .8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--list-backGround-color);
+    padding: 0.8rem 0.5rem;
+}
+
+li.item p{
+    text-align: right;
+    flex-grow: 0.8;
+}
+
+.addedTask li:last-child{
+    border-radius: 0 0 1rem 1rem;
+}
+
+.addedTask li:first-child{
+    border-radius: 1rem 1rem 0 0;
+}
+
+ul.addedTask > * + *{
+    border-top: solid rgb(255, 255, 255);
+}
+
+.item button{
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.item:hover button{
+    opacity: 1;
+}
