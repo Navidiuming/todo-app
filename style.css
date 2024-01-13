@@ -4,7 +4,7 @@
     --fs : 0.7rem;
     font-size: 1.2rem;
     --img-backGround : url("./assets/images/bg-light-correction.jpg");
-    --list-backGround-color : hsl(248, 16%, 20%);
+    --list-backGround-color :  rgb(41, 78, 114);
 }
 
 *{
@@ -52,7 +52,7 @@ ul{
 
 /* add task */
 .addTask{
-    background-color: rgb(41, 78, 114);
+    background-color: var(--list-backGround-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -102,9 +102,6 @@ li.item p{
     flex-grow: 0.8;
 }
 
-.addedTask li:last-child{
-    border-radius: 0 0 1rem 1rem;
-}
 
 .addedTask li:first-child{
     border-radius: 1rem 1rem 0 0;
@@ -122,4 +119,25 @@ ul.addedTask > * + *{
 
 .item:hover button{
     opacity: 1;
+}
+
+.taskManager{
+    font-size: var(--fs);
+    border-radius: 0 0 1rem 1rem;
+    padding: 10px 3px 10px 0;
+    border-top: 2px solid white;
+    background-color: var(--list-backGround-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.taskManager div{
+    display: flex;
+    flex-direction: row;
+    flex: 0.8;
+    justify-content: space-around;
+}
+
+.completed{
+    text-decoration: line-through;
 }
