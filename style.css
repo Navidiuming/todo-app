@@ -102,6 +102,13 @@ li.item p{
     flex-grow: 0.8;
 }
 
+.addedTask.showCompleted .item:not(.completed){
+    display: none;
+}
+
+.addedTask.showActive .item.completed{
+    display: none;
+}
 
 .addedTask li:first-child{
     border-radius: 1rem 1rem 0 0;
@@ -118,7 +125,9 @@ ul.addedTask > * + *{
 }
 
 .item:hover button{
+    text-decoration-line: none;
     opacity: 1;
+    color: white;
 }
 
 .taskManager{
@@ -138,6 +147,41 @@ ul.addedTask > * + *{
     justify-content: space-around;
 }
 
-.completed{
+.completed > p{
     text-decoration: line-through;
+}
+
+.BtnsTaskManager button:hover{
+    scale: 1.4;
+    transition: 0.2s;
+    cursor: pointer;
+    color: white;
+}
+
+.BtnsTaskManager button.active{
+    transition: 0.2s;
+    color: goldenrod;
+    text-shadow: 2px 2px blue ;
+}
+
+
+.modyfiy{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 5px;
+    flex-grow: 1;
+    max-width: 50px;
+}
+
+.hideInput{
+    scale: 0;
+    width: 0px;
+}
+
+.active .hideInput{
+    scale: 1;
+    width: auto;
+    transition: 0.3s;
+    background-color: white;
 }
