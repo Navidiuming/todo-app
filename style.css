@@ -102,6 +102,10 @@ li.item p{
     flex-grow: 0.8;
 }
 
+.addedTask{
+    max-height: 400px;
+    overflow: scroll ;
+}
 .addedTask.showCompleted .item:not(.completed){
     display: none;
 }
